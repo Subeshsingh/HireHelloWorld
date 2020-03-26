@@ -1,0 +1,94 @@
+/* ------------------- Main Navigation  Styles------------------- */
+
+.mainnavlink  a{
+    color: white !important;
+}
+.mainnavlink a:hover{
+    color:aqua !important;
+}
+.brand{
+    width: auto;
+    font-size: 2.25rem;
+    color: whitesmoke !important;
+}
+.brand :hover{
+    color:white !important;
+}
+.mylogo{
+width: 40%;
+}
+
+/*----------------- Sidedrawer Style----------------------- */
+
+.SideDrawer {
+    position: fixed;
+    width: 280px;
+    max-width: 70%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color:rgb(52, 58, 64);
+    padding: 32px 16px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-out;
+}
+.Open {
+    transform: translateX(0);
+}
+.Close {
+    transform: translateX(-100%);
+}
+.DrawerToggle {
+    width: 40px;
+    height: 100%;
+    display: flex;
+    flex-flow: column !important;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3px 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 3px;
+    background: rgb(36,34,34,0.28);
+}
+
+.DrawerToggle div{
+    margin: 3px;
+    width: 90%;
+    height: 3px;
+    background-color: white;
+}
+.DrawerToggle :hover {
+    background-color:aqua ;
+}
+.Backdrop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.brand1{
+    font-size: 1.7rem;
+    width: auto;
+    text-align: center;
+    color: whitesmoke !important;
+   
+}
+.SideDrawer a:hover{
+    text-decoration: none !important;
+    color:aqua;
+}
+.SideDrawer a{
+    color: white;
+}
+hr {
+    display: block;
+    margin-top: 0.6em;
+    margin-bottom: 0.5em;
+    border-style: inset;
+    border-width: 1px;
+  }
