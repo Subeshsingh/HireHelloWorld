@@ -35,9 +35,9 @@ export class NavbarC extends Component {
         return (
         <Fragment>  
             <div className="mainnav">
-                <Navbar bg="dark"  variant="dark">
+                <Navbar bg="dark"  variant="dark" className="fixed-top">
                    <Navbar.Brand href="#home"><img className="mylogo" src={logo} alt="MyLogo" /></Navbar.Brand>
-                        <Nav className="ml-auto d-none d-md-flex mainnavlink">
+                        <Nav className="d-none m-auto d-md-flex mainnavlink">
                             <Nav.Link href="#home">About</Nav.Link>
                             <Nav.Link href="#discover">Discover</Nav.Link>
                             <Nav.Link href="#contact">Contact</Nav.Link>

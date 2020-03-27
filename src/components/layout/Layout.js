@@ -6,9 +6,7 @@ import './Layout.css';
 export class Layout extends Component {
     render() {
         return (
-            <NavbarC>
-            
-            </NavbarC>      
+            <NavbarC/>     
         );
     }
 }

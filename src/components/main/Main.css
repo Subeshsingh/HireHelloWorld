@@ -1,0 +1,126 @@
+.slideText{
+    background:url(../../assests/images/background/background-1.png) no-repeat center center fixed;
+    background-size: cover;
+    height: 500px;
+    text-align: center;
+}
+.innertext{
+    margin-top:11.5rem ;
+}
+.innertext p{
+    text-transform: uppercase;
+    font-size: 4rem;
+    color: rgba(59, 57, 57, 0.925);
+}
+
+section.yellow  {
+    background:#ffe873;
+    padding:5.8rem 0 4.5rem;
+	color:#fcfcfc;
+}
+
+.blockquote {
+	font-size:1.2rem;
+	border:none;
+	padding:0;
+}
+
+blockquote.large {
+	font-size:36px;
+	font-weight:700;
+	line-height:1.1em;
+}
+
+.icon-10x {
+    font-size: 10em;
+  }
+.section h3{
+text-align: center !important;
+font-size: 2.8em;
+font-weight: bold;
+padding-bottom:1rem ;
+}
+.mission{
+    padding: 6.3rem 0 5rem;
+}
+
+.missonImg{
+    width: 100%;
+} 
+.section.orange{
+    background: #f36f36;
+    color: white;
+    padding: 6rem 0 5rem;
+}
+
+.service-box{
+    padding:1rem .5rem;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.service-box h4 {
+    color: #f7f7f7;
+    font-size: 22px;
+    font-weight: 700;
+    margin: .625rem 0 1rem;
+}
+    
+.target,.targetText{
+    -webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	-ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+.service-box:hover {
+    background:#f36518;
+}
+.service-box:hover .target{
+   /* transform: scale(1.1); */
+   /* transform: translateY(1,2); */
+   animation: zoominout .8s ease-in-out  normal;
+}
+
+.service-box:hover .targetText{
+    /* transform: scale(1.1); */
+    /* transform: translateY(1,2); */
+    animation: textmove .8s ease-in-out  normal;
+ }
+
+ @keyframes textmove{
+    0%{
+        transform: translateY(0px);
+        visibility: hidden;
+    }
+    25%{
+        transform: translateY(15px);
+        opacity: 0;
+    }
+}
+@keyframes zoominout{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    
+}
+
+/* ---------------------spacer--------------Quote */
+.section.bg3{
+    background-image:url(../../assests//images/background/bg-3.jpg);
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+.groupQuote{
+    padding: 6rem 0 4.5rem;
+}
