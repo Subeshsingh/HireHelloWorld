@@ -1,0 +1,80 @@
+.contactForm{
+    padding : 6rem 0 4.5rem;
+    background-color: #1bac91;
+}
+.contactForm div h4{
+    text-align: center !important;
+    font-size: 2.8em;
+    font-weight: bold;
+    padding-bottom:1rem ;
+    color: white;
+}
+.contactForm div p{
+    font-size: 1.1rem;
+    color: white;
+    /* font-weight: ; */
+}
+.blankdivider30{
+    height: 2rem;
+}
+
+/*Mediaqueries for diffrent devices --------------------*/
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (max-device-width : 320px) {
+/* Styles */
+    .contactForm{
+        padding : 2.5rem 0 1.5rem;
+    }
+    .contactForm div h4{
+        font-size: 1.7rem;
+        font-weight: 600;
+        padding-bottom:1rem ;
+    }
+    .contactForm div p{
+        font-size: 1rem;
+    }
+    .divButton{
+        text-align: center;
+    }
+}
+@media only screen and (min-device-width : 321px) and (max-device-width : 568px) {
+/* Styles */
+    .contactForm{
+        padding : 2.5rem 0 1.5rem;
+    }
+    .contactForm div h4{
+        font-size: 1.7rem;
+        font-weight: 600;
+        padding-bottom:1rem ;
+    }
+    .contactForm div p{
+        font-size: 1rem;
+    }
+    .divButton{
+        text-align: center;
+    }
+ }
+ @media only screen and (min-device-width : 569px) and (max-device-width : 768px) {
+    /* Styles */
+        .contactForm{
+            padding: 2.8rem 0 1.5rem;
+        }
+        .contactForm div h4{
+            font-size: 2.2em;
+            font-weight: 600;
+            padding-bottom:1rem ;
+        }
+        .contactForm div p{
+            font-size: 1rem;
+        }
+        .divButton{
+            text-align: center;
+        }
+     }
+    
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+    
+}
+

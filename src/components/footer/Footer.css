@@ -1,0 +1,31 @@
+.footerH{
+    text-align: center;
+}
+footer{
+    background: #343a40;
+    color: white;
+}
+
+/*Mediaqueries for diffrent devices --------------------*/
+/* Smartphones (portrait and landscape) ----------- */
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-device-width : 320px) {
+/* Styles */
+    footer p{
+        font-size: .8rem;
+    }
+}
+@media only screen and (min-device-width : 321px)and (max-device-width : 568px) {
+/* Styles */
+    footer p{
+        font-size: .8rem;
+    }
+}        
+@media only screen and (min-device-width : 569px) and (max-device-width : 768px) {
+/* Styles */
+    footer p{
+        font-size: .9rem;
+    }
+}
+

@@ -20,15 +20,15 @@ export class NavbarC extends Component {
         if(this.state.show){
             sideDrawer=(
                 <div className="SideDrawer">
-                    <a href="#home"className="brand1"><img className="mylogo" src={logo} alt="Mylogo"/></a>
-                    <hr/>
                     <div className="sidedrawerlink">
-                        <Nav.Link>About</Nav.Link> 
-                        <Nav.Link>Discover</Nav.Link> 
-                        <Nav.Link>Contact</Nav.Link> 
-                        <Nav.Link>Hire from us</Nav.Link> 
-                        <Nav.Link>Apply</Nav.Link> 
-                        <Nav.Link>About</Nav.Link>
+                        <Nav.Link className="sideLink" href="#home"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
+                        <hr/>
+                        <Nav.Link className="sideLink" href="#home">About</Nav.Link> 
+                        <Nav.Link className="sideLink" href="#home">Discover</Nav.Link> 
+                        <Nav.Link className="sideLink" href="#home">Contact</Nav.Link> 
+                        <Nav.Link className="sideLink" href="#home">Hire from us</Nav.Link> 
+                        <Nav.Link className="sideLink" href="#home">Apply</Nav.Link> 
+                        <Nav.Link className="sideLink" href="#home">FAQ</Nav.Link>
                     </div> 
                 </div> );
         }
@@ -36,8 +36,8 @@ export class NavbarC extends Component {
         <Fragment>  
             <div className="mainnav">
                 <Navbar bg="dark"  variant="dark" className="fixed-top">
-                   <Navbar.Brand href="#home"><img className="mylogo" src={logo} alt="MyLogo" /></Navbar.Brand>
-                        <Nav className="d-none m-auto d-md-flex mainnavlink">
+                <Nav.Link className="sideLink"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
+                        <Nav className="d-none ml-auto d-md-flex mainnavlink">
                             <Nav.Link href="#home">About</Nav.Link>
                             <Nav.Link href="#discover">Discover</Nav.Link>
                             <Nav.Link href="#contact">Contact</Nav.Link>

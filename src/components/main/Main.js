@@ -10,26 +10,26 @@ import {Carousel}from 'react-bootstrap';
 import './Main.css';
 
 export class Main extends Component {
-	state={
-		animationIn:'',
-		animationOut:''
-	}
-	animateSerivesIN =() =>{
-		this.setState(prevState=>({
-			...prevState,
-			animationIn:'fadeInUp'
-		}));
-	}
-	animateSerivesOut =() =>{
-		this.setState(prevState=>({
-			...prevState,
-			animationOut:'fadeOut'
-		}));
-	}
+	// state={
+	// 	animationIn:'',
+	// 	animationOut:''
+	// }
+	// animateSerivesIN =() =>{
+	// 	this.setState(prevState=>({
+	// 		...prevState,
+	// 		animationIn:'fadeInUp'
+	// 	}));
+	// }
+	// animateSerivesOut =() =>{
+	// 	this.setState(prevState=>({
+	// 		...prevState,
+	// 		animationOut:'fadeOut'
+	// 	}));
+	// }
     render() {
         return (
         <Fragment>
-        <div className="container-fluid slideText">
+        <div className="container-fluid slideTextImg">
              <Carousel controls={false} indicators={false} interval={3000} >
                  <Carousel.Item className="innertext">
                         <p>If you think you<strong> Deserve <br/>Better</strong></p>
@@ -70,7 +70,7 @@ export class Main extends Component {
 			<div class="row" >
 				<div class="col-md-4">
 					<div>
-						<h2>What we <strong>believe</strong> in?</h2>
+						<h2 className="belivesText">What we <strong>believe</strong> in?</h2>
 						<p>
 							Success isn't about how much money you make, it's about the difference 
 							you make in people's lives.
@@ -136,6 +136,7 @@ export class Main extends Component {
 	</section>
 
 	{/* --------------- Quote-------------------- */}
+
 	<section class="section bg3">
 		<div class="container">
 			<div class="row groupQuote">
@@ -150,6 +151,9 @@ export class Main extends Component {
 			</div>
 		</div>
 	</section>
+
+	{/* --------------form----------- */}
+	
     </Fragment>
         );
     }

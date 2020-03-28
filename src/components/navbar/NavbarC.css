@@ -1,38 +1,49 @@
 /* ------------------- Main Navigation  Styles------------------- */
-
 .mainnavlink  a{
     color: white !important;
 }
 .mainnavlink a:hover{
     color:aqua !important;
 }
-.brand{
-    width: auto;
-    font-size: 2.25rem;
-    color: whitesmoke !important;
-}
-.brand :hover{
-    color:white !important;
-}
 .mylogo{
-width: 45%;
-margin-left: 10%;
+ width: 45%;
+ margin-left: 10%;
+ /* transition */
+ -webkit-transition: all .3s ease-in-out;
+-moz-transition: all .3s ease-in-out;
+-o-transition: all .3s ease-in-out;
+-ms-transition: all .3s ease-in-out;
+transition: all .3s ease-in-out;
+}
+.mylogo:hover{
+    animation: zoominout .8s ease-in-out  normal !important;
+}
+@keyframes zoominout{
+    0%{
+        transform: scale(1);
+    }
+    25%{
+        transform: scale(1.1);
+    }
 }
 
 /*----------------- Sidedrawer Style----------------------- */
 
 .SideDrawer {
+    display: flex !important;
+    flex-flow: row;
     position: fixed;
     width: 280px;
-    max-width: 70%;
+    max-width: 60%;
     height: 100%;
     left: 0;
     top: 0;
     z-index: 2000;
     background-color:rgb(52, 58, 64);
-    padding: 32px 16px;
+    padding: 2rem 1rem;
     box-sizing: border-box;
     transition: transform 0.3s ease-out;
+    overflow: auto;
 }
 .Open {
     transform: translateX(0);
@@ -72,13 +83,7 @@ margin-left: 10%;
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
-.brand1{
-    font-size: 1.7rem;
-    width: auto;
-    text-align: center;
-    color: whitesmoke !important;
-   
-}
+
 .SideDrawer a:hover{
     text-decoration: none !important;
     color:aqua;
@@ -93,3 +98,76 @@ hr {
     border-style: inset;
     border-width: 1px;
   }
+
+  /*Mediaqueries for diffrent devices --------------------*/
+  /* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+        
+    }
+    
+    /* Smartphones (landscape) ----------- */
+    @media only screen and (min-width : 321px) {
+    /* Styles */
+        .SideDrawer .sideLink{
+            margin: 7Px !important;
+            padding: 2px !important;            
+        }
+    }
+    
+    /* Smartphones (portrait) ----------- */
+    @media only screen and (max-width : 320px) {
+    /* Styles */
+
+    }
+    
+    /* iPads (portrait and landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    /* Styles */
+
+    }
+    
+    /* iPads (landscape) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+
+    }
+    
+    /* iPads (portrait) ----------- */
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    /* Styles */
+
+    }
+    /**********
+    iPad 3
+    **********/
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    }
+    
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    }
+    /* Desktops and laptops ----------- */
+    @media only screen  and (min-width : 1224px) {
+    /* Styles */
+    }
+    
+    /* Large screens ----------- */
+    @media only screen  and (min-width : 1824px) {
+    /* Styles */
+    }
+    
+    /* iPhone 4 ----------- */
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    }
+    
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+    /* Styles */
+    }
+    
+    /* iPhone 5 ----------- */
+    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
+    /* Styles */
+    }

@@ -1,4 +1,4 @@
-.slideText{
+.slideTextImg{
     background:url(../../assests/images/background/background-1.png) no-repeat center center fixed;
     background-size: cover;
     height: 500px;
@@ -19,11 +19,11 @@ section.yellow  {
 	color:#fcfcfc;
 }
 
-.blockquote {
+/* .blockquote {
 	font-size:1.2rem;
 	border:none;
 	padding:0;
-}
+} */
 
 blockquote.large {
 	font-size:36px;
@@ -34,11 +34,17 @@ blockquote.large {
 .icon-10x {
     font-size: 10em;
   }
+
+/* Mission Block------------- */
+
 .section h3{
 text-align: center !important;
 font-size: 2.8em;
 font-weight: bold;
 padding-bottom:1rem ;
+}
+.section h2{
+    font-size: 1.5em;
 }
 .mission{
     padding: 6.3rem 0 5rem;
@@ -46,7 +52,8 @@ padding-bottom:1rem ;
 
 .missonImg{
     width: 100%;
-} 
+}
+ /*Services Block --------------------- */
 .section.orange{
     background: #f36f36;
     color: white;
@@ -124,3 +131,183 @@ padding-bottom:1rem ;
 .groupQuote{
     padding: 6rem 0 4.5rem;
 }
+
+
+/*Mediaqueries for diffrent devices --------------------*/
+/* Smartphones (landscape) ----------- */
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width :320px) {
+    /* Styles */
+    .slideTextImg{
+        height: 380px;
+    }
+    .innertext p{
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: rgba(59, 57, 57, 0.925);
+    }
+
+    /* Block Quotes */
+    section.yellow  {
+        padding:4rem 0 2.5rem;
+    }
+    blockquote.large {
+        font-size:1.5rem;
+        font-weight:500;
+        line-height:1.1em;
+    }
+    .icon-10x {
+        font-size: 6rem;
+    }
+    
+    /* Mission-Block */
+    .section h3{
+        font-size: 1.7em;
+        font-weight: 600;
+        padding-bottom:1rem ;
+    }
+    .section h2{
+        font-size: 1.4em;
+        font-weight: 500;
+    }
+    .mission{
+        padding: 2.5rem 0 1.5rem;
+    }
+    /* Services Block */
+    .section.orange{
+        background: #f36f36;
+        color: white;
+        padding: 2.5rem 0 1.5rem;
+    }
+    
+    .service-box{
+        padding: .5rem .5rem;
+    }
+    
+    .service-box h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: .5rem 0 .625rem;
+    }
+}
+
+@media only screen and (min-device-width: 321px) and (max-device-width: 568px){
+    /* Styles */
+    .slideTextImg{
+            height: 380px;
+    }
+    .innertext p{
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: rgba(59, 57, 57, 0.925);
+    } 
+    /* Block Quotes */
+    section.yellow  {
+        padding:4rem 0 2.5rem;
+    }
+    blockquote.large {
+        font-size:1.5rem;
+        font-weight:500;
+        line-height:1.1em;
+    }
+    .icon-10x {
+        font-size: 6rem;
+    }
+
+    /* Mission-Block */
+    .section h3{
+        font-size: 1.7em;
+        font-weight: 600;
+        padding-bottom:1rem ;
+    }
+    .section h2{
+        font-size: 1.4em;
+        font-weight: 500;
+    }
+    .mission{
+        padding: 2.5rem 0 1.5rem;
+    }
+    /* Services Block */
+    .section.orange{
+        background: #f36f36;
+        color: white;
+        padding: 2.5rem 0 1.5rem;
+    }
+
+    .service-box{
+        padding: .5rem .5rem;
+    }
+
+    .service-box h4 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: .5rem 0 .625rem;
+    }
+} 
+
+@media only screen and (min-device-width: 569px) and (max-device-width: 768px){
+    /* Styles */
+    .slideTextImg{
+            height: 400px;
+    }
+    .innertext p{
+        font-size: 2.2rem;
+        font-weight: 500;
+    } 
+    /* Block Quotes */
+    section.yellow  {
+        padding: 5rem 0 3rem;
+    }
+    blockquote.large {
+        font-size:2rem;
+        font-weight:500;
+    }
+    .icon-10x {
+        font-size: 8rem;
+    }
+
+    /* Mission-Block */
+    .section h3{
+        font-size: 2.2em;
+        font-weight: 600;
+        padding-bottom:1.5rem ;
+    }
+    .section h2{
+        font-size: 1.6em;
+        font-weight: 500;
+    }
+    .mission{
+        padding: 2.8rem 0 1.5rem;
+    }
+    /* Services Block */
+    .section.orange{
+        background: #f36f36;
+        color: white;
+        padding: 2.8rem 0 1.5rem;
+    }
+
+    .service-box{
+        padding: .5rem .5rem;
+    }
+
+    .service-box h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: .5rem 0 .625rem;
+    }
+} 
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+/* Styles */
+    .innertext p{
+        font-size: 3.5rem;
+        color: rgba(59, 57, 57, 0.925);
+    }
+    .innertext{
+        margin-top:13rem ;
+    }
+}
+    
