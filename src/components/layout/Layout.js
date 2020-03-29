@@ -10,7 +10,6 @@ export class Layout extends Component {
                 <Main/>
                 <Form/> 
             </Fragment>
-    
         );
     }
 }

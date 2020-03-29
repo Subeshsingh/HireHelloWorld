@@ -10,22 +10,7 @@ import {Carousel}from 'react-bootstrap';
 import './Main.css';
 
 export class Main extends Component {
-	// state={
-	// 	animationIn:'',
-	// 	animationOut:''
-	// }
-	// animateSerivesIN =() =>{
-	// 	this.setState(prevState=>({
-	// 		...prevState,
-	// 		animationIn:'fadeInUp'
-	// 	}));
-	// }
-	// animateSerivesOut =() =>{
-	// 	this.setState(prevState=>({
-	// 		...prevState,
-	// 		animationOut:'fadeOut'
-	// 	}));
-	// }
+
     render() {
         return (
         <Fragment>
