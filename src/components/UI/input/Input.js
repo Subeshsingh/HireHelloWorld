@@ -34,6 +34,7 @@ const Input = (props) => {
     }
     return (
         <div className="form-group"> 
+        <label className="Label">{props.label}</label><br/>
             {inputElement}     
         </div>
     )

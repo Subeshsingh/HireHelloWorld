@@ -21,14 +21,14 @@ export class NavbarC extends Component {
             sideDrawer=(
                 <div className="SideDrawer">
                     <div className="sidedrawerlink">
-                        <Nav.Link className="sideLink" href="#home"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
+                        <Nav.Link className="sideLink" href="/"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
                         <hr/>
                         <Nav.Link className="sideLink" href="#home">About</Nav.Link> 
                         <Nav.Link className="sideLink" href="#home">Discover</Nav.Link> 
                         <Nav.Link className="sideLink" href="#home">Contact</Nav.Link> 
                         <Nav.Link className="sideLink" href="#home">Hire from us</Nav.Link> 
-                        <Nav.Link className="sideLink" href="#home">Apply</Nav.Link> 
-                        <Nav.Link className="sideLink" href="#home">FAQ</Nav.Link>
+                        <Nav.Link className="sideLink" href="/apply">Apply</Nav.Link> 
+                        <Nav.Link className="sideLink" to="footerId">FAQ</Nav.Link>
                     </div> 
                 </div> );
         }
@@ -36,14 +36,14 @@ export class NavbarC extends Component {
         <Fragment>  
             <div className="mainnav">
                 <Navbar bg="dark"  variant="dark" className="fixed-top">
-                <Nav.Link className="sideLink"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
+                <Nav.Link className="sideLink" href="/"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
                         <Nav className="d-none ml-auto d-md-flex mainnavlink">
                             <Nav.Link href="#home">About</Nav.Link>
                             <Nav.Link href="#discover">Discover</Nav.Link>
                             <Nav.Link href="#contact">Contact</Nav.Link>
                             <Nav.Link href="#hirefu">Hire from us</Nav.Link>
-                            <Nav.Link href="#apply">Apply</Nav.Link>
-                            <Nav.Link href="#faq">FAQ</Nav.Link>
+                            <Nav.Link href="/apply">Apply</Nav.Link>
+                            <Nav.Link to="footerId">FAQ</Nav.Link>
                         </Nav>
                         <div className="DrawerToggle ml-auto d-flex d-md-none" onClick={this.sidedrawerHandler}>
                                 <div></div>

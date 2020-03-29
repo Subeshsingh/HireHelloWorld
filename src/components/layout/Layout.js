@@ -1,12 +1,16 @@
-import React, { Component } from 'react'
-import NavbarC from '../navbar/NavbarC';
-import {Nav} from 'react-bootstrap';
+import React, { Component, Fragment } from 'react'
+import Main from '../main/Main';
+import Form from '../../container/form/Form';
 import './Layout.css';
 
 export class Layout extends Component {
     render() {
         return (
-            <NavbarC/>     
+            <Fragment>            
+                <Main/>
+                <Form/> 
+            </Fragment>
+    
         );
     }
 }
