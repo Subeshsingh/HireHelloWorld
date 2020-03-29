@@ -4,26 +4,12 @@ import Input from '../../components/UI/input/Input';
 export class ApplyForm extends Component {
     state={
             formFields:{
-                country:{
+                name:{
                     elementType: 'input',
-                    label:'Country :',
+                    label:'Name :',
                     elementConfig:{
                         type:'text',
-                        placeholder:'Country'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                phone:{
-                    elementType: 'input',
-                    label:'Mobile Number :',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'Number'
+                        placeholder:' Your Name'
                     },
                     value:'',
                     validation:{
@@ -47,121 +33,9 @@ export class ApplyForm extends Component {
                     valid:false,
                     touched:false
                 },
-                fName:{
-                    elementType: 'input',
-                    label:'First Name :',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'First Name'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                lName:{
-                    elementType: 'input',
-                    label:'Last Name :',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'Last Name'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                gender:{
-                    elementType: 'input',
-                    label:'Gender :',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'Gender'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                gradYear:{
-                    elementType: 'input',
-                    label:'Year of Graduation :',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'Graduation Year'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                experience:{
-                    elementType: 'input',
-                    label:'Year of Experience :',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'Experience'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                college:{
-                    elementType: 'input',
-                    label:'College/University:',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'College/University Name'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                degree:{
-                    elementType: 'input',
-                    label:'Degree :',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'Degree'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
-                branch:{
-                    elementType: 'input',
-                    label:' Branch:',
-                    elementConfig:{
-                        type:'text',
-                        placeholder:'Branch Name'
-                    },
-                    value:'',
-                    validation:{
-                        required: true,
-                    },
-                    valid:false,
-                    touched:false
-                },
                 resume:{
                     elementType: 'input',
-                    label:'upload Resume :',
+                    label:'Upload Resume :',
                     elementConfig:{
                         type:'text',
                         placeholder:'Resume'
@@ -173,6 +47,22 @@ export class ApplyForm extends Component {
                     valid:false,
                     touched:false
                 },
+                message:{
+                    elementType: 'textarea',
+                    label:'Message',
+                    elementConfig:{
+                        type:'text',
+                        rows:'5',
+                        placeholder:'Message'
+                    },
+                    value:'',
+                    validation:{
+                        required: true,
+                    },
+                    valid:false,
+                    touched:false
+                 }
+                
         },
         isValid: false
     }
