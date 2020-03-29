@@ -5,11 +5,11 @@ export class ApplyForm extends Component {
     state={
             formFields:{
                 name:{
-                    elementType: 'input',
+                    elementType: 'inputA',
                     label:'Name :',
                     elementConfig:{
                         type:'text',
-                        placeholder:' Your Name'
+                        placeholder:'Your Name'
                     },
                     value:'',
                     validation:{
@@ -19,7 +19,7 @@ export class ApplyForm extends Component {
                     touched:false
                 },
                 email:{
-                    elementType: 'input',
+                    elementType: 'inputA',
                     label:'Email :',
                     elementConfig:{
                         type:'email',
@@ -34,13 +34,13 @@ export class ApplyForm extends Component {
                     touched:false
                 },
                 resume:{
-                    elementType: 'input',
+                    elementType: 'file',
                     label:'Upload Resume :',
                     elementConfig:{
                         type:'text',
-                        placeholder:'Resume'
+                        placeholder:'Choose File'
                     },
-                    value:'',
+                    file:null,
                     validation:{
                         required: true,
                     },
@@ -49,7 +49,7 @@ export class ApplyForm extends Component {
                 },
                 message:{
                     elementType: 'textarea',
-                    label:'Message',
+                    label:'Message :',
                     elementConfig:{
                         type:'text',
                         rows:'5',
@@ -95,17 +95,44 @@ export class ApplyForm extends Component {
     
             return isValid;
         };
+// Checking validity for files input
+    checkFileValidity= (value,rules)=>{
+        let isValid=true;
+        console.log(value.name+ "Files name");
+        if(rules.required){
+            isValid=(value.name.trim()!==null && isValid)
+        }
+        return isValid;
+    }
  //Input taker fucntion------------------------   
     inputChangeHandler = (event,eleName) => {
-        const updatedForm={
-            ...this.state.formFields,
-            [eleName]:{
-                ...this.state.formFields[eleName],
-                value: event.target.value,
-                valid: this.checkValidity(event.target.value, this.state.formFields[eleName].validation),
-                touched: true,
+        let updatedForm;
+        if(eleName==='resume'){
+            updatedForm={
+                ...this.state.formFields,
+                [eleName]:{
+                    ...this.state.formFields[eleName],
+                    elementConfig:{
+                        ...this.state.formFields[eleName].elementConfig,
+                        placeholder:event.target.files[0].name,
+                    },
+                    file: event.target.files[0],
+                    valid: this.checkFileValidity(event.target.files[0], this.state.formFields[eleName].validation),
+                    touched: true,
+                }
             }
-        }
+        }else{
+            updatedForm={
+                ...this.state.formFields,
+                [eleName]:{
+                    ...this.state.formFields[eleName],
+                    value: event.target.value,
+                    valid: this.checkValidity(event.target.value, this.state.formFields[eleName].validation),
+                    touched: true,
+                }
+            }
+         }
+         
         this.setState({formFields: updatedForm});
     }
 // form Submit--------------------------------------------------------------
@@ -126,6 +153,7 @@ export class ApplyForm extends Component {
         let form= formElementArray.map( formElem =>(
             <Input 
                 key={formElem.id}
+                for={formElem.id}
                 elementType={formElem.config.elementType}
                 label={formElem.config.label}
                 elementConfig ={formElem.config.elementConfig}
@@ -139,6 +167,10 @@ export class ApplyForm extends Component {
                 <h4>HireHelloWorld Apllication Form</h4>
                 <div className="container">
                      {form}
+                     <div className="subButton">
+                     <input type="submit" value="Submit" class="btn btn-dark mt-1 py-2"/>
+                     </div>
+                     
                 </div>
             </div>
         )

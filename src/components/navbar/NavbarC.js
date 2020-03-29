@@ -25,7 +25,7 @@ export class NavbarC extends Component {
                         <Nav.Link className="sideLink" href="/"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
                         <hr/>
                         <Nav.Link className="sideLink" href="/#about" onClick={this.sidedrawerHandler}>About</Nav.Link> 
-                        <Nav.Link className="sideLink" href="/#servies"onClick={this.sidedrawerHandler}>Discover</Nav.Link> 
+                        <Nav.Link className="sideLink" href="/#services"onClick={this.sidedrawerHandler}>Discover</Nav.Link> 
                         <Nav.Link className="sideLink" href="/#contact"onClick={this.sidedrawerHandler}>Contact</Nav.Link> 
                         {/* <NavLink className="sideLink" to="/#home">ire from us</NavLink>  */}
                         <NavLink className="sideLink" to="/apply" onClick={this.sidedrawerHandler}>Apply</NavLink> 
@@ -39,11 +39,11 @@ export class NavbarC extends Component {
                 <Navbar bg="dark"  variant="dark" className="fixed-top">
                     <Nav.Link className="sideLink" href="/"><img className="mylogo" src={logo} alt="Mylogo"/></Nav.Link>
                         <Nav className="d-none ml-auto d-md-flex mainnavlink">
-                            <Nav.Link href="#about" className="mx-3" onClick={this.sidedrawerHandler}>About</Nav.Link>
-                            <Nav.Link href="/#servies" className="mx-3" onClick={this.sidedrawerHandler}>Discover</Nav.Link>
-                            <Nav.Link href="/#contact" className="mx-3" onClick={this.sidedrawerHandler}>Contact</Nav.Link>
+                            <Nav.Link href="/#about" className="mx-3" >About</Nav.Link>
+                            <Nav.Link href="/#services" className="mx-3" >Discover</Nav.Link>
+                            <Nav.Link href="/#contact" className="mx-3" >Contact</Nav.Link>
                             {/* <NavLink to="/#hirefu">Hire from us</NavLink> */}
-                            <NavLink to="/apply" className="mx-3 p-2" onClick={this.sidedrawerHandler}>Apply</NavLink>
+                            <NavLink to="/apply" className="mx-3 p-2" >Apply</NavLink>
                             {/* <NavLink to="/#footer">FAQ</NavLink> */}
                         </Nav>
                         <div className="DrawerToggle ml-auto d-flex d-md-none" onClick={this.sidedrawerHandler}>

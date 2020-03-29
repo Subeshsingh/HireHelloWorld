@@ -9,7 +9,18 @@ const Input = (props) => {
         case('input'):
             inputElement = (
                 <input 
+                id={props.for}
                 className="form-control py-4"
+                {...props.elementConfig}
+                value={props.value}
+                onChange={props.changed}/>
+            );
+        break;
+        case('inputA'):
+        inputElement = (
+                <input 
+                id={props.for}
+                className="form-control form-control-md"
                 {...props.elementConfig}
                 value={props.value}
                 onChange={props.changed}/>
@@ -18,15 +29,25 @@ const Input = (props) => {
         case('textarea'):
         inputElement = (
             <textarea
-            className="form-control"
+            id={props.for}
+            className="form-control form-control-md"
             {...props.elementConfig}
             value={props.value}
             onChange={props.changed}/>
         );
+        break;
+        case('file'):
+        inputElement = (
+                <div className="custom-file">
+                    <input type="file" className="custom-file-input form-control-md" id={props.for} onChange={props.changed} 
+                        value={props.value}/>
+                    <label className="custom-file-label form-label-md" htmlFor={props.for} aria-describedby={props.for}>{props.elementConfig.placeholder}</label>
+                </div>);
     break;
         default:
             inputElement = (
                 <input className="form-control py-2"
+                id={props.for}
                 {...props.elementConfig}
                    value={props.value}
                    onChange={props.changed}/>
@@ -34,7 +55,7 @@ const Input = (props) => {
     }
     return (
         <div className="form-group"> 
-        <label className="Label">{props.label}</label><br/>
+        <label className="label" htmlFor={props.for}>{props.label}</label><br/>
             {inputElement}     
         </div>
     )

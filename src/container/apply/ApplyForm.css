@@ -1,12 +1,16 @@
 .applyformwrapper{
     padding-top: 8rem;
     padding-bottom: 3em;
-    background-color: steelblue;
+    background-color:#1bac91;
 }
 .applyformwrapper h4{
     text-align: center;
+    color: white;
     margin-bottom: 1.5em;
 }
 .applyformwrapper div{
     max-width: 600px;
+}
+.subButton{
+    text-align: center;
 }
