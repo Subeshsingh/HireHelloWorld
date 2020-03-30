@@ -1,12 +1,13 @@
 .applyformwrapper{
     padding-top: 8rem;
     padding-bottom: 3em;
-    background-color:#1bac91;
+    background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
+    background-size: cover;
 }
 .applyformwrapper h4{
     text-align: center;
     color: white;
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
 }
 .applyformwrapper div{
     max-width: 600px;

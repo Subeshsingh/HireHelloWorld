@@ -1,5 +1,5 @@
 .slideTextImg{
-    background:url(../../assests/images/background/background-1.png) no-repeat center center fixed;
+    background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
     background-size: cover;
     height: 500px;
     text-align: center;
@@ -10,20 +10,20 @@
 .innertext p{
     text-transform: uppercase;
     font-size: 4rem;
-    color: rgba(59, 57, 57, 0.925);
+    color: white
 }
-    
+.breakerdiv{
+    height: 3px;
+    background-color: white;
+}
+    /* spacer=------------------------ */
 section.yellow  {
-    background:#ffe873;
+    /* background:url(../../assests/images/background/servies.png) no-repeat center center fixed; */
+     background:white; 
     padding:5.8rem 0 4.5rem;
-	color:#fcfcfc;
+	color:#343a40;
 }
 
-/* .blockquote {
-	font-size:1.2rem;
-	border:none;
-	padding:0;
-} */
 
 blockquote.large {
 	font-size:36px;
@@ -36,7 +36,11 @@ blockquote.large {
   }
 
 /* Mission Block------------- */
-
+.mission{
+    background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
 .section h3{
 text-align: center !important;
 font-size: 2.8em;
@@ -55,7 +59,9 @@ padding-bottom:1rem ;
 }
  /*Services Block --------------------- */
 .section.orange{
-    background: #f36f36;
+    background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
+    background-size: cover;
+    /* background: #343a40; */
     color: white;
     padding: 6rem 0 5rem;
 }
@@ -87,7 +93,7 @@ padding-bottom:1rem ;
     transition: all .3s ease-in-out;
 }
 .service-box:hover {
-    background:#f36518;
+    background:#0c6580;
 }
 .service-box:hover .target{
    /* transform: scale(1.1); */
@@ -123,9 +129,10 @@ padding-bottom:1rem ;
 
 /* ---------------------spacer--------------Quote */
 .section.bg3{
-    background-image:url(../../assests//images/background/bg-3.jpg);
-    background-size: cover;
-    color: white;
+    /* background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed; */
+    /* background-size: cover; */
+    background-color: white;
+    color:#343a40;
     text-align: center;
 }
 .groupQuote{
@@ -177,8 +184,6 @@ padding-bottom:1rem ;
     }
     /* Services Block */
     .section.orange{
-        background: #f36f36;
-        color: white;
         padding: 2.5rem 0 1.5rem;
     }
     
@@ -231,8 +236,6 @@ padding-bottom:1rem ;
     }
     /* Services Block */
     .section.orange{
-        background: #f36f36;
-        color: white;
         padding: 2.5rem 0 1.5rem;
     }
 
@@ -283,8 +286,6 @@ padding-bottom:1rem ;
     }
     /* Services Block */
     .section.orange{
-        background: #f36f36;
-        color: white;
         padding: 2.8rem 0 1.5rem;
     }
 

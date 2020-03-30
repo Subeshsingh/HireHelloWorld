@@ -1,24 +1,29 @@
 .contactForm{
     padding : 6rem 0 4.5rem;
-    background-color: #1bac91;
-}
+    /* background:url(../../assests/images/background/bg2.jpg) no-repeat center center fixed;
+    background-size: cover; */
+    background-color:whitesmoke;
+} 
 .contactForm div h4{
     text-align: center !important;
     font-size: 2.8em;
     font-weight: bold;
     padding-bottom:1rem ;
-    color: white;
+    color:#343a40;
 }
 .contactForm div p{
     font-size: 1.1rem;
-    color: white;
+    color:#343a40;
     /* font-weight: ; */
 }
 .blankdivider30{
     height: 2rem;
 }
 .divButton{
-    margin-top: 1.5em;
+    margin-top: 1.5em
+}
+.btn-dark{
+    background-color: #0c6580;
 }
 
 /*Mediaqueries for diffrent devices --------------------*/

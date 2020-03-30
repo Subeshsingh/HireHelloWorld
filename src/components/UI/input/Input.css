@@ -4,11 +4,11 @@
     color: white    ;
 }
 .form-control:focus {
-    border-color: #1bac91;
-    box-shadow: 0 0 0 0.07rem #343a40;
+    border-color: #0c6580;
+    box-shadow: 0 0 0 0.07rem #0c6580;
   }
 .custom-file-label:focus, .custom-file-input:focus{
-    border-color: #1bac91;
-    box-shadow: 0 0.1 0.1 0.1rem #343a40;
+    border-color: #0c6580;
+    box-shadow: 0 0.1 0.1 0.1rem #51b1dd;
   }
-  
+  /* color:#0c6580 */

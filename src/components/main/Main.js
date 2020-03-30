@@ -1,6 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import backgund1 from '../../assests/images/background/background-1.png';
-import backgund2 from '../../assests/images/background/bg2.jpg';
 import laptop from '../../assests/images/icons/laptop.png';
 import mission from '../../assests/images/background/creativity.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -34,6 +32,7 @@ export class Main extends Component {
              </Carousel>
         </div>
         {/*------- Section--------------*/ }
+		<div className="breakerdiv"></div>
        <section className="spacer yellow">
             <div className="container">
                 <div className="row">
@@ -49,6 +48,7 @@ export class Main extends Component {
             </div>
         </section>
     {/*------------------------mission------------------ */}
+	<div className="breakerdiv"></div>
         <section id="about" class="section mission ">
 		<div class="container">
 			<h3>Our Mission</h3>
@@ -70,15 +70,33 @@ export class Main extends Component {
 				</div>
 				<div class="col-md-7">
 					<div class="aligncenter">
-						<img src={mission} className="missonImg"alt="mission-image" />
+						<img src={mission} className="missonImg"alt="mission" />
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
+	
+	{/* --------------- Quote-------------------- */}
+	<div className="breakerdiv"></div>
+	<section class="section bg3">
+		<div class="container">
+			<div class="row groupQuote">
+				<div class="col-sm-12">
+					<blockquote class="large">
+					<FontAwesomeIcon icon={faQuoteLeft}/> We are a small tribe which shares a common dream of bringing huge change.
+					</blockquote>
+				</div>
+				<div class="col-sm-12">
+				<FontAwesomeIcon className="icon-10x iconpeopole" icon={faUsers}/>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div className="breakerdiv"></div>
+	{/* --------------form----------- */}
+	
     {/* ------------Services------------------------ */}
-    
     <section id="services" className="section orange">
 		<div className="container">
 			<h3>Courses Offered</h3>
@@ -119,25 +137,6 @@ export class Main extends Component {
 			</div>
 		</div>
 	</section>
-
-	{/* --------------- Quote-------------------- */}
-
-	<section class="section bg3">
-		<div class="container">
-			<div class="row groupQuote">
-				<div class="col-sm-12">
-					<blockquote class="large">
-					<FontAwesomeIcon icon={faQuoteLeft}/> We are a small tribe which shares a common dream of bringing huge change.
-					</blockquote>
-				</div>
-				<div class="col-sm-12">
-				<FontAwesomeIcon className="icon-10x iconpeopole" icon={faUsers}/>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	{/* --------------form----------- */}
 	
     </Fragment>
         );
