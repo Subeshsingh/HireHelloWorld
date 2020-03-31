@@ -5,6 +5,9 @@
 .mainnavlink a:hover{
     color:#0c6580 !important;
 }
+.sideLinkApply:hover{
+    text-decoration: none;
+}
 .mylogo{
  width: 45%;
  margin-left: 10%;

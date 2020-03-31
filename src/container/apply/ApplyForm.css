@@ -6,7 +6,8 @@
 }
 .applyformwrapper h4{
     text-align: center;
-    color: white;
+    font-size: 2rem;
+    color: rgba(255,255,255,.8);
     margin-bottom: 2em;
 }
 .applyformwrapper div{

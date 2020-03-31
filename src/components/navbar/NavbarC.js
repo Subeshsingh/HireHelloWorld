@@ -1,6 +1,6 @@
 import React, {Component, Fragment}from 'react';
 import {NavLink} from 'react-router-dom';
-import {Navbar,NavDropdown,Nav,Form,FormControl,Button} from 'react-bootstrap';
+import {Navbar,Nav} from 'react-bootstrap';
 import logo from '../../assests/images/logo.png';
 import  './NavbarC.css';
 
@@ -28,7 +28,7 @@ export class NavbarC extends Component {
                         <Nav.Link className="sideLink" href="/#services"onClick={this.sidedrawerHandler}>Discover</Nav.Link> 
                         <Nav.Link className="sideLink" href="/#contact"onClick={this.sidedrawerHandler}>Contact</Nav.Link> 
                         {/* <NavLink className="sideLink" to="/#home">ire from us</NavLink>  */}
-                        <NavLink className="sideLink" to="/apply" onClick={this.sidedrawerHandler}>Apply</NavLink> 
+                        <NavLink className="sideLink sideLinkApply" to="/apply" onClick={this.sidedrawerHandler}>Apply</NavLink> 
                         {/* <Nav.Link className="sideLink" to="/#footer">FAQ</Nav.Link> */}
                     </div> 
                 </div> );
@@ -43,7 +43,7 @@ export class NavbarC extends Component {
                             <Nav.Link href="/#services" className="mx-3" >Discover</Nav.Link>
                             <Nav.Link href="/#contact" className="mx-3" >Contact</Nav.Link>
                             {/* <NavLink to="/#hirefu">Hire from us</NavLink> */}
-                            <NavLink to="/apply" className="mx-3 p-2" >Apply</NavLink>
+                            <NavLink to="/apply" className="mx-3 p-2 sideLinkApply" >Apply</NavLink>
                             {/* <NavLink to="/#footer">FAQ</NavLink> */}
                         </Nav>
                         <div className="DrawerToggle ml-auto d-flex d-md-none" onClick={this.sidedrawerHandler}>
