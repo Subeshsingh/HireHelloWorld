@@ -11,4 +11,7 @@
     border-color: #0c6580;
     box-shadow: 0 0.1 0.1 0.1rem #51b1dd;
   }
-  /* color:#0c6580 */
+.error{
+  color:rgba(255,0,50,0.8);
+  font-size: 13px;
+}

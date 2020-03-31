@@ -9,7 +9,7 @@
     font-size: 2.8em;
     font-weight: bold;
     padding-bottom:1rem ;
-    color:#343a40;
+    color:rgba(52, 58, 64, .8);
 }
 .contactForm div p{
     font-size: 1.1rem;
@@ -24,6 +24,10 @@
 }
 .btn-dark{
     background-color: #0c6580;
+}
+.error{
+    color:rgba(255,0,50,0.8);
+    font-size: 13px;
 }
 
 /*Mediaqueries for diffrent devices --------------------*/

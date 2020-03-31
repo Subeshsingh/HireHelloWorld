@@ -16,7 +16,8 @@ export class Form extends Component {
                     required: true,
                 },
                 valid:false,
-                touched:false
+                touched:false,
+                error:null
             },
             email:{
                 elementType: 'input',
@@ -30,7 +31,8 @@ export class Form extends Component {
                     isEmail: true,
                 },
                 valid:false,
-                touched:false
+                touched:false,
+                error:null
             },
             subject:{
                 elementType: 'input',
@@ -43,25 +45,34 @@ export class Form extends Component {
                     required: true,
                 },
                 valid:false,
-                touched:false
-            },
-            // message:{
-            //     elementType: 'textarea',
-            //     elementConfig:{
-            //         type:'text',
-            //         rows:'5',
-            //         placeholder:'Message'
-            //     },
-            //     value:'',
-            //     validation:{
-            //         required: true,
-            //     },
-            //     valid:false,
-            //     touched:false
-            // }
+                touched:false,
+                error:null
+            }
         },
-        isValid:false,
+        message:{
+            elementType: 'textarea',
+            elementConfig:{
+                type:'text',
+                rows:'5',
+                placeholder:'Message'
+            },
+            value:'',
+            validation:{
+                required: true,
+            },
+            valid:false,
+            touched:false,
+            error:null
+        }, 
+        errors:{
+            name:'Please enter the "Name"',
+            email:'Please enter a valid "Email"',
+            subject:'Please fill the "Subject"',
+            message:'Please write your "Message"'
+        },
+        isValid:true
     };
+
     //Methods for validating the each input and entire form
     checkValidity = (value,rules) => {
         let isValid= true;
@@ -88,29 +99,85 @@ export class Form extends Component {
         if(rules.confirmpassword){
             isValid = ( value === this.state.auth.password.value) && isValid;
         }
-
+    
         return isValid;
     };
 
     //------------Input data handler---------- 
     
     inputChangeHandler = (event,eleName) => {
-        const updatedAuth={
-            ...this.state.auth,
-            [eleName]:{
-                ...this.state.auth[eleName],
-                value: event.target.value,
-                valid: this.checkValidity(event.target.value, this.state.auth[eleName].validation),
-                touched: true,
+       let updatedState={
+           ...this.state,
+       }
+        if(eleName==='message'){     
+            let updatedMessage={
+                ...updatedState[eleName]
+            };
+            updatedMessage.value=event.target.value;
+            updatedMessage.valid=this.checkValidity(event.target.value, updatedState[eleName].validation);
+            updatedMessage.touched=true
+            if(updatedMessage.valid){
+                updatedMessage.error=null
+            }else{
+                updatedMessage.error=updatedState.errors[eleName];
             }
+            // console.log(updatedMessage);
+            //Checking for form validity------------------------------
+            let formIsValid=true;
+            for (let inputIdentifier in updatedState.auth) {
+                formIsValid = updatedState.auth[inputIdentifier].valid && formIsValid;
+            }
+            formIsValid=updatedMessage.valid && formIsValid;
+            
+            this.setState({message: updatedMessage,isValid:formIsValid});
+        }else{
+            
+            let updatedAuth={
+                ...this.state.auth,
+            };
+            let updatedAuthElem={
+                ...updatedAuth[eleName]
+            }  
+            updatedAuthElem.value=event.target.value;
+            updatedAuthElem.valid=this.checkValidity(event.target.value,updatedAuth[eleName].validation);
+            updatedAuthElem.touched=true;
+            if(updatedAuthElem.valid){
+                updatedAuthElem.error=null;
+            }else{
+                updatedAuthElem.error=updatedState.errors[eleName];
+            }
+            updatedAuth[eleName]=updatedAuthElem;
+            // console.log(updatedAuth);
+            
+            //Checking for form validity------------------------------
+            let isValid=true;
+            for (let inputIdentifier in updatedAuth) {
+                isValid = updatedAuth[inputIdentifier].valid && isValid;
+            }
+            isValid=updatedState.message.valid && isValid;
+            this.setState({auth: updatedAuth, isValid:isValid});
         }
-        this.setState({auth: updatedAuth});
     }
+    formValidator= () => {
 
+    }
     submitHandler = (event) =>{
         event.preventDefault();
-        console.log("Submit");
-        // this.props.onSignup( this.state.auth.email.value, this.state.auth.password.value , this.state.auth.cnfpassword.value);
+        let formisValid=true;
+        for(let formElem in this.state.auth ){
+            formisValid= (this.state.auth[formElem].valid && formisValid)
+        }
+        formisValid=this.state.message.valid && formisValid;
+        if(formisValid){ 
+            console.log("Submit");
+             // this.props.onSignup( this.state.auth.email.value, this.state.auth.password.value , this.state.auth.cnfpassword.value);    
+         }else{
+             this.setState((prevState,props)=>({
+                 ...prevState,
+                 isValid:false
+             }));
+             alert("Please fill the form");
+         }
     }
 
     
@@ -131,7 +198,8 @@ export class Form extends Component {
                 invalid={!formElem.config.valid}
                 shouldValidate={formElem.config.validation}
                 value={formElem.config.value} 
-                changed={(event)=> this.inputChangeHandler(event, formElem.id)}/>
+                changed={(event)=> this.inputChangeHandler(event, formElem.id)}
+                error={formElem.config.error}/>
         ));
 
         return (
@@ -149,8 +217,10 @@ export class Form extends Component {
                                 {form}
                             </div>
                             <div className="col-sm-6 divButton">
-                            <textarea rows="5" className="form-control" required placeholder="Message"></textarea>
-                                <input type="submit" value="Send Message" class="btn btn-dark mt-3 py-2"/>
+                            <textarea rows="5" className="form-control" placeholder="Message" onChange={e =>this.inputChangeHandler(e,"message")} 
+                                        value={this.state.message.value}></textarea>
+                                <div className="error">{this.state.message.error}</div>
+                                <input type="submit" value="Send Message" disabled={!this.state.isValid} class="btn btn-dark mt-3 py-2"/>
                             </div>
                          
                         </div>

@@ -16,7 +16,8 @@ export class ApplyForm extends Component {
                         required: true,
                     },
                     valid:false,
-                    touched:false
+                    touched:false,
+                    error:null
                 },
                 email:{
                     elementType: 'inputA',
@@ -31,7 +32,8 @@ export class ApplyForm extends Component {
                         isEmail: true,
                     },
                     valid:false,
-                    touched:false
+                    touched:false,
+                    error:null
                 },
                 resume:{
                     elementType: 'file',
@@ -45,7 +47,8 @@ export class ApplyForm extends Component {
                         required: true,
                     },
                     valid:false,
-                    touched:false
+                    touched:false,
+                    error:null
                 },
                 message:{
                     elementType: 'textarea',
@@ -60,11 +63,18 @@ export class ApplyForm extends Component {
                         required: true,
                     },
                     valid:false,
-                    touched:false
+                    touched:false,
+                    error:null
                  }
                 
         },
-        isValid: false
+        errors:{
+            name:'Please enter the Name',
+            email:'Please enter a valid Email',
+            resume:'Please select a valid file',
+            message:'Please write your Message'
+        },
+        isValid: true,
     }
         //Methods for validating the each input and entire form
         checkValidity = (value,rules) => {
@@ -106,41 +116,57 @@ export class ApplyForm extends Component {
     }
  //Input taker fucntion------------------------   
     inputChangeHandler = (event,eleName) => {
-        let updatedForm;
-        if(eleName==='resume'){
-            updatedForm={
-                ...this.state.formFields,
-                [eleName]:{
-                    ...this.state.formFields[eleName],
-                    elementConfig:{
-                        ...this.state.formFields[eleName].elementConfig,
-                        placeholder:event.target.files[0].name,
-                    },
-                    file: event.target.files[0],
-                    valid: this.checkFileValidity(event.target.files[0], this.state.formFields[eleName].validation),
-                    touched: true,
-                }
-            }
-        }else{
-            updatedForm={
-                ...this.state.formFields,
-                [eleName]:{
-                    ...this.state.formFields[eleName],
-                    value: event.target.value,
-                    valid: this.checkValidity(event.target.value, this.state.formFields[eleName].validation),
-                    touched: true,
-                }
-            }
+        const updatedForm={
+            ...this.state.formFields
+        };
+        const updatedFormElem={
+            ...updatedForm[eleName]
+        }
+        if(eleName==='resume'){  
+            updatedFormElem.elementConfig={
+                        ...updatedFormElem.elementConfig,
+                          placeholder:event.target.files[0].name,
+                     };
+            updatedFormElem.file=event.target.files[0];
+            console.log(updatedFormElem.files);
+            updatedFormElem.valid=this.checkFileValidity(event.target.files[0], updatedForm[eleName].validation);            
+        }else{    
+            updatedFormElem.value=event.target.value;
+            updatedFormElem.valid=this.checkValidity(event.target.value,updatedForm[eleName].validation);
          }
-         
-        this.setState({formFields: updatedForm});
+        updatedFormElem.touched= true;
+        if(updatedFormElem.valid){
+            updatedFormElem.error=null;
+        }else{
+            updatedFormElem.error= this.state.errors[eleName];
+        }
+        updatedForm[eleName]=updatedFormElem;
+        let formIsValid=true;
+         for(let ele in updatedForm){
+            formIsValid=updatedForm[ele].valid && formIsValid;
+         }
+         this.setState({formFields: updatedForm,isValid: formIsValid});
     }
+
 // form Submit--------------------------------------------------------------
     submitHandler = (event) =>{
         event.preventDefault();
-        console.log("Submit");
-        // this.props.onSignup( this.state.auth.email.value, this.state.auth.password.value , this.state.auth.cnfpassword.value);
+        let formisValid=true;
+        for(let formElem in this.state.formFields ){
+            formisValid= (this.state.formFields[formElem].valid && formisValid)
+        }
+        if(formisValid){ 
+            console.log("Submit");
+             // this.props.onSignup( this.state.auth.email.value, this.state.auth.password.value , this.state.auth.cnfpassword.value);    
+         }else{
+             this.setState((prevState,props)=>({
+                 ...prevState,
+                 isValid:false
+             }));
+             alert("Please fill the form");
+         }
     }
+
     render() {
         const formElementArray=[];
         for(let ele in this.state.formFields){
@@ -160,7 +186,8 @@ export class ApplyForm extends Component {
                 invalid={!formElem.config.valid}
                 shouldValidate={formElem.config.validation}
                 value={formElem.config.value} 
-                changed={(event)=> this.inputChangeHandler(event, formElem.id)}/>
+                changed={(event)=> this.inputChangeHandler(event, formElem.id)}
+                error={formElem.config.error}/>
         ));
         return (
             <div className="applyformwrapper">
@@ -168,7 +195,7 @@ export class ApplyForm extends Component {
                 <div className="container">
                      {form}
                      <div className="subButton">
-                     <input type="submit" value="Submit" class="btn btn-dark mt-1 py-2"/>
+                     <input type="submit" value="Submit" disabled={!this.state.isValid} className="btn btn-success mt-1 py-2" onClick={this.submitHandler}/>
                      </div>
                      
                 </div>

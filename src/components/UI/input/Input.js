@@ -55,8 +55,9 @@ const Input = (props) => {
     }
     return (
         <div className="form-group"> 
-        <label className="label" htmlFor={props.for}>{props.label}</label><br/>
-            {inputElement}     
+            <label className="label" htmlFor={props.for}>{props.label}</label><br/>
+              {inputElement}
+            <div className="error">{props.error}</div>     
         </div>
     )
 }

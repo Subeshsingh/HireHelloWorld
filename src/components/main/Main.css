@@ -1,3 +1,41 @@
+/* Modal */
+.modalButton{
+    float: right;
+    position: relative;
+    font-size: 20px;
+    top: -38px;
+    right: -35px;
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
+}
+.modalHeading{
+    padding: .5rem 0rem .5rem;
+}
+#serviceModal1{
+    padding-top: 1rem;
+}
+.modalButton:hover{
+    color:rgba(255,50,50,.9);
+}
+.container-fluid h5{
+    text-align: center;
+}
+.contentDevider{
+    height: 1px;
+    width: 100%;
+    background-color: rgba(0,0,0,.8);
+}
+.content{
+    font-size: 12px;
+}
+.content h6{
+    font-size: 14px;
+}
+.contentHeading{
+    font-size: 18px;
+    padding: .5rem 0 .5rem;
+}
+/* SlideText */
 .slideTextImg{
     background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
     background-size: cover;
@@ -10,20 +48,20 @@
 .innertext p{
     text-transform: uppercase;
     font-size: 4rem;
-    color: white
+    color: rgba(255,255,255,.7)
 }
 .breakerdiv{
     height: 3px;
-    background-color: white;
+    background-color:rgba(255,255,255,.7);
 }
-    /* spacer=------------------------ */
+
+/* spacer=------------------------ */
 section.yellow  {
     /* background:url(../../assests/images/background/servies.png) no-repeat center center fixed; */
      background:white; 
     padding:5.8rem 0 4.5rem;
 	color:#343a40;
 }
-
 
 blockquote.large {
 	font-size:36px;
@@ -39,13 +77,14 @@ blockquote.large {
 .mission{
     background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
     background-size: cover;
-    color: white;
+    color:white
 }
 .section h3{
 text-align: center !important;
 font-size: 2.8em;
 font-weight: bold;
 padding-bottom:1rem ;
+color: rgba(255,255,255,.7);
 }
 .section h2{
     font-size: 1.5em;
@@ -146,17 +185,25 @@ padding-bottom:1rem ;
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width :320px) {
-    /* Styles */
+/*---------- Modal----------- */
+    .modalButton{
+        float: right;
+        position: relative;
+        font-size: 20px;
+        color: rgba(0,0,0,.8);
+        top: 0;
+        right: 0;
+    }
+/* Styles */
     .slideTextImg{
         height: 380px;
     }
     .innertext p{
         font-size: 1.5rem;
         font-weight: 500;
-        color: rgba(59, 57, 57, 0.925);
     }
 
-    /* Block Quotes */
+/* Block Quotes */
     section.yellow  {
         padding:4rem 0 2.5rem;
     }
@@ -199,6 +246,15 @@ padding-bottom:1rem ;
 }
 
 @media only screen and (min-device-width: 321px) and (max-device-width: 568px){
+    /* Modal */
+    .modalButton{
+        float: right;
+        position: relative;
+        font-size: 20px;
+        color: rgba(0,0,0,.8);
+        top: 0;
+        right: 0;
+    }
     /* Styles */
     .slideTextImg{
             height: 380px;
@@ -206,7 +262,6 @@ padding-bottom:1rem ;
     .innertext p{
         font-size: 1.7rem;
         font-weight: 500;
-        color: rgba(59, 57, 57, 0.925);
     } 
     /* Block Quotes */
     section.yellow  {
@@ -305,7 +360,6 @@ padding-bottom:1rem ;
 /* Styles */
     .innertext p{
         font-size: 3.5rem;
-        color: rgba(59, 57, 57, 0.925);
     }
     .innertext{
         margin-top:13rem ;
