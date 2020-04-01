@@ -70,7 +70,8 @@ export class Form extends Component {
             subject:'Please fill the "Subject"',
             message:'Please write your "Message"'
         },
-        isValid:true
+        isValid:true,
+        success:null
     };
 
     //Methods for validating the each input and entire form
@@ -170,13 +171,45 @@ export class Form extends Component {
         formisValid=this.state.message.valid && formisValid;
         if(formisValid){ 
             console.log("Submit");
-             // this.props.onSignup( this.state.auth.email.value, this.state.auth.password.value , this.state.auth.cnfpassword.value);    
-         }else{
+            // this.props.onSignup( this.state.auth.email.value, this.state.auth.password.value , this.state.auth.cnfpassword.value);    
+           this.setState((prevState,props)=>({
+            ...prevState,
+            auth:{
+                ...prevState.auth,
+                name:{
+                    ...prevState.auth.name,
+                    value:"",
+                    touched:false,
+                    error:null
+                },
+                email:{
+                    ...prevState.auth.email,
+                    value:"",
+                    touched:false,
+                    error:null
+                },
+                subject:{
+                    ...prevState.auth.subject,
+                    value:"",
+                    touched:false,
+                    error:null
+                }
+            },
+            message:{
+                ...prevState.message,
+                value:'',
+                touched:false,
+                error:null
+            },
+            success:'Form submitted Successfully.',
+            isValid:true
+         })); 
+        }else{
              this.setState((prevState,props)=>({
                  ...prevState,
-                 isValid:false
+                 isValid:false,
+                 success:'Please fill the form',
              }));
-             alert("Please fill the form");
          }
     }
 
@@ -206,6 +239,7 @@ export class Form extends Component {
            <section id="contact" className="contactForm">  
                 <div className="container">
                     <h4>Get in Touch</h4>
+                    <div className="successMessage">{this.state.success}</div>
                     {/* <p>
                         Reque facer nostro et ius, cu persius mnesarchum disputando eam, clita prompta et mel vidisse phaedrum pri et. Facilisis posidonium ex his. Mutat iudico vis in, mea aeque tamquam scripserit an, mea eu ignota viderer probatus. Lorem legere consetetur ei
                         eum. Sumo aeque assentior te eam, pri nominati posidonium consttuam
