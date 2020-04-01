@@ -230,7 +230,9 @@ export class ApplyForm extends Component {
         return (
             <div className="applyformwrapper">
                 <div className="container">
-                    <div className="successMessage">{this.state.success}</div>
+                     { this.state.success==='Please fill the form'?
+                        <div className="successMessageDanger">{this.state.success}</div>:
+                        <div className="successMessage">{this.state.success}</div> }
                      {form}
                      <div className="submitButton">
                      <button type="submit"disabled={!this.state.isValid} className="btn btn-success btn-sm ml-auto mr-2" onClick={this.submitHandler}>Submit</button>

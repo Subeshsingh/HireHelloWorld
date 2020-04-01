@@ -239,7 +239,9 @@ export class Form extends Component {
            <section id="contact" className="contactForm">  
                 <div className="container">
                     <h4>Get in Touch</h4>
-                    <div className="successMessage">{this.state.success}</div>
+                    { this.state.success==='Please fill the form'?
+                        <div className="successMessageDanger">{this.state.success}</div>:
+                        <div className="successMessage">{this.state.success}</div> }
                     {/* <p>
                         Reque facer nostro et ius, cu persius mnesarchum disputando eam, clita prompta et mel vidisse phaedrum pri et. Facilisis posidonium ex his. Mutat iudico vis in, mea aeque tamquam scripserit an, mea eu ignota viderer probatus. Lorem legere consetetur ei
                         eum. Sumo aeque assentior te eam, pri nominati posidonium consttuam
