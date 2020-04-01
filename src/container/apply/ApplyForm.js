@@ -237,7 +237,7 @@ export class ApplyForm extends Component {
                      <div className="submitButton">
                      <button type="submit"disabled={!this.state.isValid} className="btn btn-success btn-sm ml-auto mr-2" onClick={this.submitHandler}>Submit</button>
                      <div className="verticalDevider"></div>
-                     <button type="button" className="btn btn-danger btn-sm mr-auto ml-2" onClick={this.handleApplyForm}>Close</button>
+                     <button type="button" className="btn btn-danger btn-sm mr-auto ml-2" onClick={this.props.handleApplyForm}>Close</button>
                      </div>
                      
                 </div>

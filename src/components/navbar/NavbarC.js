@@ -83,7 +83,7 @@ export class NavbarC extends Component {
 					<div className="applyformWrapper">
                         <h4 className="applyFormHeading">Apply to HireHelloWorld</h4>
                         <div className="contentDevider"></div>
-					    <ApplyForm/>
+					    <ApplyForm handleApplyForm={this.handleApplyForm}/>
 					</div>
 				</Modal.Body>
 	        </Modal>
