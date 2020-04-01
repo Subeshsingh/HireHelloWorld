@@ -19,6 +19,14 @@
 .blankdivider30{
     height: 2rem;
 }
+.successMessage{
+    color: rgba(0,76,0,1);
+    text-align: center;
+}
+.successMessageDanger{
+    color: rgba(200,0,1,.8);
+    text-align: center;
+}   
 .divButton{
     margin-top: 1.5em
 }

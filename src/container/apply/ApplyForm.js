@@ -74,6 +74,7 @@ export class ApplyForm extends Component {
             resume:'Please select a valid file',
             message:'Please write your Message'
         },
+        success:null,
         isValid: true,
     }
         //Methods for validating the each input and entire form
@@ -158,12 +159,49 @@ export class ApplyForm extends Component {
         if(formisValid){ 
             console.log("Submit");
              // this.props.onSignup( this.state.auth.email.value, this.state.auth.password.value , this.state.auth.cnfpassword.value);    
-         }else{
-             this.setState((prevState,props)=>({
-                 ...prevState,
-                 isValid:false
-             }));
-             alert("Please fill the form");
+            this.setState((prevState,props)=>({
+                ...prevState,
+                formFields:{
+                    ...prevState.formFields,
+                    name:{
+                        ...prevState.formFields.name,
+                        value:"",
+                        touched:false,
+                        error:null
+                    },
+                    email:{
+                        ...prevState.formFields.email,
+                        value:"",
+                        touched:false,
+                        error:null
+                    },
+                    resume:{
+                        ...prevState.formFields.resume,
+                        elementConfig:{
+                            ...prevState.formFields.resume.elementConfig,
+                            placeholder:'Message'
+                        },
+                        file:null,
+                        value:"",
+                        touched:false,
+                        error:null
+                    }, 
+                    message:{
+                        ...prevState.formFields.message,
+                        value:"",
+                        touched:false,
+                        error:null
+                    },
+                },
+                success:'Form submitted Successfully.',
+                isValid:true
+            }));
+        }else{
+            this.setState((prevState,props)=>({
+                ...prevState,
+                isValid:false,
+                success:'Please fill the form',
+            }));
          }
     }
 
@@ -192,11 +230,14 @@ export class ApplyForm extends Component {
         return (
             <div className="applyformwrapper">
                 <div className="container">
+                     { this.state.success==='Please fill the form'?
+                        <div className="successMessageDanger">{this.state.success}</div>:
+                        <div className="successMessage">{this.state.success}</div> }
                      {form}
                      <div className="submitButton">
                      <button type="submit"disabled={!this.state.isValid} className="btn btn-success btn-sm ml-auto mr-2" onClick={this.submitHandler}>Submit</button>
                      <div className="verticalDevider"></div>
-                     <button type="button" className="btn btn-danger btn-sm mr-auto ml-2" onClick={this.handleApplyForm}>Close</button>
+                     <button type="button" className="btn btn-danger btn-sm mr-auto ml-2" onClick={this.props.handleApplyForm}>Close</button>
                      </div>
                      
                 </div>
