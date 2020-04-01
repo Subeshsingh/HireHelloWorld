@@ -1,3 +1,39 @@
+/* ApplyForm -modal */
+div.modal-body{
+    padding: .1rem 0 .1rem;
+}
+.label{
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+div.form-group{
+  color: rgba(255,255,255,.8);
+}
+.contentDevider{
+    height: 1px;
+    margin: auto;
+    width: 95%;
+    background-color: rgba(0,0,0,.3);
+}
+.applyFormHeading{
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top:.5rem;
+    padding-bottom: .5rem;
+    color: rgba(0,0,0,.8);
+}
+.modalButton{
+    float: right;
+    position: relative;
+    font-size: 20px;
+    top: -26px;
+    right: -16px;
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
+}
+.modalButton:hover{
+    color:rgba(255,50,50,.9);
+}
 /* ------------------- Main Navigation  Styles------------------- */
 .mainnavlink  a{
     color: white !important;
@@ -104,73 +140,28 @@ hr {
 
   /*Mediaqueries for diffrent devices --------------------*/
   /* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+@media only screen and (max-device-width : 320px){
     /* Styles */
-        
+    .modalButton{
+        color:rgba(255,50,50,.9);
+        top: 2px;
+        right: 5px;
     }
+}
     
     /* Smartphones (landscape) ----------- */
-    @media only screen and (min-width : 321px) {
+@media only screen and (min-width : 321px) {
     /* Styles */
         .SideDrawer .sideLink{
             margin: 7Px !important;
             padding: 2px !important;            
         }
-    }
-    
-    /* Smartphones (portrait) ----------- */
-    @media only screen and (max-width : 320px) {
+}
+@media only screen and (min-device-width : 321px) and (max-device-width : 575px) {
     /* Styles */
-
+    .modalButton{
+        color: rgba(255,50,50,.9);
+        top: .4rem;
+        right: .4rem;
     }
-    
-    /* iPads (portrait and landscape) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    /* Styles */
-
-    }
-    
-    /* iPads (landscape) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-    /* Styles */
-
-    }
-    
-    /* iPads (portrait) ----------- */
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
-    /* Styles */
-
-    }
-    /**********
-    iPad 3
-    **********/
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
-    }
-    
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
-    }
-    /* Desktops and laptops ----------- */
-    @media only screen  and (min-width : 1224px) {
-    /* Styles */
-    }
-    
-    /* Large screens ----------- */
-    @media only screen  and (min-width : 1824px) {
-    /* Styles */
-    }
-    
-    /* iPhone 4 ----------- */
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
-    }
-    
-    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
-    /* Styles */
-    }
-    
-    /* iPhone 5 ----------- */
-    @media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation : landscape) and (-webkit-device-pixel-ratio: 2){
-    /* Styles */
-    }
+}

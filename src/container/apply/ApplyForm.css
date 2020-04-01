@@ -1,18 +1,34 @@
 .applyformwrapper{
-    padding-top: 8rem;
-    padding-bottom: 3em;
-    background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
-    background-size: cover;
+    padding-top: .5rem;
+    padding-bottom: .5em;
+    /* background:url(../../assests/images/background/DeepSeaSpace.jpg) no-repeat center center fixed;
+    background-size: cover; */
 }
-.applyformwrapper h4{
-    text-align: center;
-    font-size: 2rem;
-    color: rgba(255,255,255,.8);
-    margin-bottom: 2em;
-}
+div.form-group{
+    color: rgba(255,255,255,.8) !important;
+  }
 .applyformwrapper div{
     max-width: 600px;
 }
-.subButton{
-    text-align: center;
+.verticalDevider{
+    height: 40px;
+    width: 2px;
+    background-color: rgba(0,0,0,.5);
 }
+
+.submitButton{
+  padding: 5px 0 5px 0px !important;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: end;
+   justify-content: flex-end;
+   padding: .75rem;
+    /* border-top: 1px solid #dee2e6; */
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+}
+

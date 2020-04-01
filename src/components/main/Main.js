@@ -11,7 +11,8 @@ export class Main extends Component {
 	state={
 			show1:false,
 			show2:false,
-			show3:false
+			show3:false,
+			showApplyform:false
 	}
 	// methods for handling modals
 	handleClose1=()=>{
@@ -92,8 +93,8 @@ export class Main extends Component {
 						</p>
 					</div>
 				</div>
-				<div class="col-md-7">
-					<div class="aligncenter">
+				<div className="col-md-7">
+					<div className="aligncenter">
 						<img src={mission} className="missonImg"alt="mission" />
 					</div>
 				</div>
@@ -103,21 +104,21 @@ export class Main extends Component {
 	
 {/* --------------- Quote-------------------- */}
 	<div className="breakerdiv"></div>
-	<section class="section bg3">
-		<div class="container">
-			<div class="row groupQuote">
-				<div class="col-sm-12">
-					<blockquote class="large">
+	<section className="section bg3">
+		<div className="container">
+			<div className="row groupQuote">
+				<div className="col-sm-12">
+					<blockquote className="large">
 					<FontAwesomeIcon icon={faQuoteLeft}/> We are a small tribe which shares a common dream of bringing huge change.
 					</blockquote>
 				</div>
-				<div class="col-sm-12">
+				<div className="col-sm-12">
 				<FontAwesomeIcon className="icon-10x iconpeopole" icon={faUsers}/>
 				</div>
 			</div>
 		</div>
 	</section>
-	<div className="breakerdiv"></div>
+	{/* <div className="breakerdiv"></div> */}
 
 {/* ------------Services------------------------ */}
     <section id="services" className="section orange">
@@ -276,6 +277,7 @@ export class Main extends Component {
 			</Modal.Body>
 			<Modal.Footer>
 				<NavLink className="btn btn-success btn-sm" to="/apply" onClick={this.handleClose1}>Apply</NavLink>	
+				<div className="deviderBtn"></div>
 				<button type="button" className="btn btn-danger btn-sm" onClick={this.handleClose1}>Close</button>
 			</Modal.Footer>
 	</Modal>
@@ -295,6 +297,7 @@ export class Main extends Component {
 			</Modal.Body>
 			<Modal.Footer>
 				<NavLink className="btn btn-success btn-sm" to="/apply" onClick={this.handleClose2}>Apply</NavLink>	
+				<div className="deviderBtn"></div>
 				<button type="button" className="btn btn-danger btn-sm" onClick={this.handleClose2}>Close</button>
 			</Modal.Footer>
 	</Modal>
@@ -315,7 +318,8 @@ export class Main extends Component {
 				</div>
 			</Modal.Body>
 			<Modal.Footer>
-				<NavLink className="btn btn-success btn-sm" to="/apply" onClick={this.handleClose3}>Apply</NavLink>	
+				<NavLink className="btn btn-success btn-sm" to="/apply" onClick={this.handleClose3}>Apply</NavLink>
+				<div className="deviderBtn"></div>	
 				<button type="button" className="btn btn-danger btn-sm" onClick={this.handleClose3}>Close</button>
 			</Modal.Footer>
 	</Modal>

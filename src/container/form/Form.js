@@ -220,7 +220,7 @@ export class Form extends Component {
                             <textarea rows="5" className="form-control" placeholder="Message" onChange={e =>this.inputChangeHandler(e,"message")} 
                                         value={this.state.message.value}></textarea>
                                 <div className="error">{this.state.message.error}</div>
-                                <input type="submit" value="Send Message" disabled={!this.state.isValid} class="btn btn-dark mt-3 py-2"/>
+                                <input type="submit" value="Send Message" disabled={!this.state.isValid} className="btn btn-dark mt-3 py-2"/>
                             </div>
                          
                         </div>
