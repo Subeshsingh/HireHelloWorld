@@ -15,9 +15,7 @@ export class App extends Component {
     );
     return (
       <Fragment>
-        {/* history={this.props.history} */}
-        <NavbarC/>
-          {router}
+        {router}
         <Footer/>
      </Fragment>
     )

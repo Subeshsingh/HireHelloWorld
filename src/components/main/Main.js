@@ -7,12 +7,12 @@ import {Modal} from 'react-bootstrap'
 import {Carousel}from 'react-bootstrap';
 import './Main.css';
 import {NavLink} from 'react-router-dom'
+import ApplyForm from '../../container/apply/ApplyForm';
 export class Main extends Component {
 	state={
 			show1:false,
 			show2:false,
-			show3:false,
-			showApplyform:false
+			show3:false
 	}
 	// methods for handling modals
 	handleClose1=()=>{
@@ -32,6 +32,26 @@ export class Main extends Component {
 			...prevState,
 			show3: !this.state.show3
 		}))
+	}
+
+	// Method for closing servicebox modal and calling applyForm Modal 
+
+	 handleApplyFormRe=(id)=>{
+		let upadtedState={
+			...this.state
+		};
+		if(upadtedState.show1===true){
+			upadtedState.show1 = !this.state.show1
+		}else if(upadtedState.show2===true){
+			upadtedState.show2 = !this.state.show2
+		}else if(upadtedState.show3===true){
+			upadtedState.show3 = !this.state.show3
+		}
+		this.setState((prevState,props)=>( 
+			{
+				...upadtedState,
+			}
+		),this.props.handleApplyForm);
 	}
     render() {
         return (
@@ -276,7 +296,7 @@ export class Main extends Component {
 				</div>
 			</Modal.Body>
 			<Modal.Footer>
-				<NavLink className="btn btn-success btn-sm" to="/apply" onClick={this.handleClose1}>Apply</NavLink>	
+				<button className="btn btn-success btn-sm"  onClick={this.handleApplyFormRe}>Apply</button>	
 				<div className="deviderBtn"></div>
 				<button type="button" className="btn btn-danger btn-sm" onClick={this.handleClose1}>Close</button>
 			</Modal.Footer>
@@ -296,7 +316,7 @@ export class Main extends Component {
 				</div>
 			</Modal.Body>
 			<Modal.Footer>
-				<NavLink className="btn btn-success btn-sm" to="/apply" onClick={this.handleClose2}>Apply</NavLink>	
+				<button className="btn btn-success btn-sm"  onClick={this.handleApplyFormRe}>Apply</button>		
 				<div className="deviderBtn"></div>
 				<button type="button" className="btn btn-danger btn-sm" onClick={this.handleClose2}>Close</button>
 			</Modal.Footer>
@@ -318,12 +338,11 @@ export class Main extends Component {
 				</div>
 			</Modal.Body>
 			<Modal.Footer>
-				<NavLink className="btn btn-success btn-sm" to="/apply" onClick={this.handleClose3}>Apply</NavLink>
+				<button className="btn btn-success btn-sm"  onClick={this.handleApplyFormRe}>Apply</button>	
 				<div className="deviderBtn"></div>	
 				<button type="button" className="btn btn-danger btn-sm" onClick={this.handleClose3}>Close</button>
 			</Modal.Footer>
 	</Modal>
-{/* --------------form----------- */}
   </Fragment> );
     }
 }
