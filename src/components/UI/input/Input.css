@@ -1,16 +1,8 @@
 .label{
     font-size: 1rem;
     font-weight: 400;
-    color: white    ;
+    color: rgba(0,0,0,.8)    ;
 }
-.form-control:focus {
-    border-color: #0c6580;
-    box-shadow: 0 0 0 0.07rem #0c6580;
-  }
-.custom-file-label:focus, .custom-file-input:focus{
-    border-color: #0c6580;
-    box-shadow: 0 0.1 0.1 0.1rem #51b1dd;
-  }
 .error{
   color:rgba(255,0,50,0.8);
   font-size: 13px;

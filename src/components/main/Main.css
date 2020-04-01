@@ -11,6 +11,11 @@
 .modalHeading{
     padding: .5rem 0rem .5rem;
 }
+.deviderBtn{
+    height: 30px;
+    width: 2px;
+    background-color: rgba(0,0,0,.8);
+}
 #serviceModal1{
     padding-top: 1rem;
 }

@@ -20,7 +20,7 @@ const Input = (props) => {
         inputElement = (
                 <input 
                 id={props.for}
-                className="form-control form-control-md"
+                className="form-control"
                 {...props.elementConfig}
                 value={props.value}
                 onChange={props.changed}/>

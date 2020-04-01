@@ -55,7 +55,7 @@ export class ApplyForm extends Component {
                     label:'Message :',
                     elementConfig:{
                         type:'text',
-                        rows:'5',
+                        rows:'3',
                         placeholder:'Message'
                     },
                     value:'',
@@ -191,11 +191,12 @@ export class ApplyForm extends Component {
         ));
         return (
             <div className="applyformwrapper">
-                <h4>HireHelloWorld Apllication Form</h4>
                 <div className="container">
                      {form}
-                     <div className="subButton">
-                     <input type="submit" value="Submit" disabled={!this.state.isValid} className="btn btn-success mt-1 py-2" onClick={this.submitHandler}/>
+                     <div className="submitButton">
+                     <button type="submit"disabled={!this.state.isValid} className="btn btn-success btn-sm ml-auto mr-2" onClick={this.submitHandler}>Submit</button>
+                     <div className="verticalDevider"></div>
+                     <button type="button" className="btn btn-danger btn-sm mr-auto ml-2" onClick={this.handleApplyForm}>Close</button>
                      </div>
                      
                 </div>
