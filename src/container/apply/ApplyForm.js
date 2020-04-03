@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import './ApplyForm.css';
 import Input from '../../components/UI/input/Input';
 export class ApplyForm extends Component {
+    constructor(props) {
+        super(props);
+        this.myFileRef = React.createRef();
+      }
     state={
             formFields:{
                 name:{
@@ -42,7 +46,6 @@ export class ApplyForm extends Component {
                         type:'text',
                         placeholder:'Choose File'
                     },
-                    file:null,
                     validation:{
                         required: true,
                     },
@@ -71,7 +74,7 @@ export class ApplyForm extends Component {
         errors:{
             name:'Please enter the Name',
             email:'Please enter a valid Email',
-            resume:'Please select a valid file',
+            resume:'Please select a valid file(size < 2MB and it type should be only DOC,PDf or TEXT)',
             message:'Please write your Message'
         },
         success:null,
@@ -109,10 +112,28 @@ export class ApplyForm extends Component {
 // Checking validity for files input
     checkFileValidity= (value,rules)=>{
         let isValid=true;
-        console.log(value.name+ "Files name");
+        let size = ((value.size/1024)/1024).toFixed(4);
+        const regex =/[^.]+$/;
+        // console.log("checking Validity"+'=>Name:'+ value.name + "Files name");
+        const extension=value.name.match(regex);
+        console.log("checking Validity"+'=>Name='+ value.name +'{Size:='+ size +'{extension:='+ extension);
         if(rules.required){
             isValid=(value.name.trim()!==null && isValid)
         }
+        console.log("After req"+isValid);
+        if(extension=='docx' || extension=='pdf' || extension=='text'){
+            isValid=(isValid && true);
+        }else{
+            isValid=(isValid && false);
+        }
+        console.log("After extension"+isValid);
+        if(size<=2){
+            isValid=(isValid && true);
+        }else{
+            isValid=(isValid && false);
+        }
+        console.log("After size"+isValid);
+        console.log(value);
         return isValid;
     }
  //Input taker fucntion------------------------   
@@ -126,11 +147,11 @@ export class ApplyForm extends Component {
         if(eleName==='resume'){  
             updatedFormElem.elementConfig={
                         ...updatedFormElem.elementConfig,
-                          placeholder:event.target.files[0].name,
+                          placeholder:this.myFileRef.current.files[0].name,
                      };
-            updatedFormElem.file=event.target.files[0];
+            //updatedFormElem.file=this.myFileRef.current.files[0];
             console.log(updatedFormElem.files);
-            updatedFormElem.valid=this.checkFileValidity(event.target.files[0], updatedForm[eleName].validation);            
+            updatedFormElem.valid=this.checkFileValidity(this.myFileRef.current.files[0], updatedForm[eleName].validation);            
         }else{    
             updatedFormElem.value=event.target.value;
             updatedFormElem.valid=this.checkValidity(event.target.value,updatedForm[eleName].validation);
@@ -181,7 +202,7 @@ export class ApplyForm extends Component {
                             ...prevState.formFields.resume.elementConfig,
                             placeholder:'Message'
                         },
-                        file:null,
+                        //file:this.myFileRef.current.files[0],
                         value:"",
                         touched:false,
                         error:null
@@ -215,7 +236,8 @@ export class ApplyForm extends Component {
         }
         
         let form= formElementArray.map( formElem =>(
-            <Input 
+            <Input
+                ref={this.myFileRef} 
                 key={formElem.id}
                 for={formElem.id}
                 elementType={formElem.config.elementType}

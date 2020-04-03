@@ -1,7 +1,8 @@
 import React from 'react';
 import './Input.css';
 
-const Input = (props) => {
+
+const Input = React.forwardRef((props,ref) => {
 
     let inputElement=null;
     switch (props.elementType){
@@ -40,7 +41,7 @@ const Input = (props) => {
         inputElement = (
                 <div className="custom-file">
                     <input type="file" className="custom-file-input form-control-md" id={props.for} onChange={props.changed} 
-                        value={props.value}/>
+                         ref={ref}/>
                     <label className="custom-file-label form-label-md" htmlFor={props.for} aria-describedby={props.for}>{props.elementConfig.placeholder}</label>
                 </div>);
     break;
@@ -61,5 +62,5 @@ const Input = (props) => {
         </div>
     )
 }
-
+)
 export default Input;
